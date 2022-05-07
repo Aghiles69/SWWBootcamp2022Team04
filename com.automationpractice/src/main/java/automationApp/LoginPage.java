@@ -1,4 +1,4 @@
-package test_base;
+package automationApp;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

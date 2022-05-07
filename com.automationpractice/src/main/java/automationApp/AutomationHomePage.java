@@ -1,11 +1,13 @@
-package test_base;
+package automationApp;
 
 import base.BasePage;
 import org.openqa.selenium.support.PageFactory;
 
 public class AutomationHomePage extends BasePage {
 
-    public AutomationHomePage() {
+
+
+    public  AutomationHomePage() {
         PageFactory.initElements(driver, this);
     }
 

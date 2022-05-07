@@ -1,4 +1,4 @@
-package test_base;
+package automationApp;
 
 import base.BasePage;
 import utils.ExcelData;

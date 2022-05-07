@@ -3,7 +3,7 @@ package shared;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import test_base.LoginPage;
+import automationApp.LoginPage;
 
 public class SystemBar extends BasePage {
 
