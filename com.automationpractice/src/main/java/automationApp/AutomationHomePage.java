@@ -1,15 +1,18 @@
 package automationApp;
 
-import base.BasePage;
-import org.openqa.selenium.support.PageFactory;
 
-public class AutomationHomePage extends BasePage {
+import org.openqa.selenium.support.PageFactory;
+import shared.SystemBar;
+
+public class AutomationHomePage extends SystemBar {
 
 
 
     public  AutomationHomePage() {
         PageFactory.initElements(driver, this);
     }
+
+
 
 
 

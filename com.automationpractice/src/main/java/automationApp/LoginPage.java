@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import shared.SystemBar;
+import utils.GenerateData;
 
 public class LoginPage extends SystemBar {
 
@@ -18,12 +19,13 @@ public class LoginPage extends SystemBar {
 
 
     public void sKInputRegisteredEmailAddress() {
+        webDriverWait.until(ExpectedConditions.visibilityOf(registeredEmailAddressInputField));
         //Fluent Wait Use
-        fluentWait.until(ExpectedConditions.visibilityOf(registeredEmailAddressInputField));
-        sendKeysToElement(registeredEmailAddressInputField, "aghiles18@yahoo.com");
+        //fluentWait.until(ExpectedConditions.visibilityOf(registeredEmailAddressInputField));
+        sendKeysToElement(registeredEmailAddressInputField, GenerateData.email());
     }
     public void sKPasswordInput(){
-        sendKeysToElement(passwordInputField, "abcd8523");
+        sendKeysToElement(passwordInputField, GenerateData.password());
     }
 
 

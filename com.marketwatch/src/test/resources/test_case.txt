@@ -1,0 +1,15 @@
+Test Case 01 :
+*navigate to market watch homepage.
+*click on the crypto option on the homepage table.
+*get the price of Eth/usd.
+*compare it to entry price.
+*assert (entry price < actual price) is true, if not print a warning message.
+
+Test Case 02 :
+*navigate to market watch homepage.
+*click on the crypto option on the homepage table.
+*get the actual price of Btc/usd.
+*compare it to wanted price.
+*assert(wanted price < actual price) is true ,if it's false print an opportunity-buy-alert-message.
+
+Test Case 03 :
