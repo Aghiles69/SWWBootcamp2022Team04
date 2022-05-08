@@ -210,6 +210,10 @@ public class BasePage {
         Select select = new Select(element);
         select.selectByValue(value);
     }
+    public void waitForInvisibilityOfElement(WebElement element) {
+        fluentWait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
 
     public boolean isElementVisible(WebElement element) {
         try {

@@ -14,6 +14,8 @@ public class SystemBar extends BasePage {
 
    //@FindBy(css = "#header > div.nav > div > div > nav > div.header_user_info > a")
     //public WebElement signInButton;
+   @FindBy(xpath = "//a[@class='account']")
+   public WebElement accountButton;
 
     @FindBy(xpath = "//a[@class='login']")
     public WebElement loginButton;
@@ -35,6 +37,14 @@ public class SystemBar extends BasePage {
 
         return new AutomationHomePage();
     }
+    public boolean isSignedIn() {
+        boolean isSignedIn = false;
 
+        if (isElementVisible(accountButton)) {
+            isSignedIn = true;
+        }
+
+        return isSignedIn;
+    }
 
 }
