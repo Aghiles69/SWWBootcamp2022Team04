@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 
-import java.util.Locale;
-
 public class HomePage extends BasePage {
 
     //AlertDismiss Region
@@ -50,6 +48,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/investing/cryptocurrency/ethusd?mod=home-page\"]")
     public WebElement ethTableLink;
 
+    @FindBy(xpath = "//td[@class='table__cell symbol']//a[@data-track-code='MW_Header_Market Data_Quote Click_Dow Jones Industrial Average']")
+    public WebElement dowjonesprice;
+
 
 
 
@@ -77,8 +78,15 @@ public class HomePage extends BasePage {
      return new EthSubPage();
     }
 
+    public UsSubPage clickOnUsMarketTable(){
+        safeClickOnElement(usMarketTableOption);
+        return new UsSubPage();
 
+    }
 
-
+    public void getDowJowPrice(){
+        hoverOverElement(dowjonesprice);
+        getTrimmedElementText(dowjonesprice);
+    }
 
 }
