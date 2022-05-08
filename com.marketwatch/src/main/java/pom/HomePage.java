@@ -12,7 +12,7 @@ public class HomePage extends BasePage {
 
     //AlertDismiss Region
     @FindBy(xpath = "//div[@id=\"cx-scrim-wrapper\"]//button")
-    WebElement dismissButton;
+    public WebElement dismissButton;
 
     @BeforeMethod(alwaysRun = true)
     public void dismissAlertPopUp(){
@@ -23,29 +23,32 @@ public class HomePage extends BasePage {
     //End AlertDismiss region
 
     @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/markets/us\"]")
-    WebElement usMarketTableOption;
+    public WebElement usMarketTableOption;
 
 
     @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/markets/europe-middle-east\"]")
-    WebElement euMarketTableOption;
+    public WebElement euMarketTableOption;
 
     @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/markets/asia\"]")
-    WebElement asiaMarketTableOption;
+    public WebElement asiaMarketTableOption;
 
     @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/investing/currencies\"]")
-    WebElement fxMarketTableOption;
+    public WebElement fxMarketTableOption;
 
     @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/investing/bonds\"]")
-    WebElement ratesMarketTableOption;
+    public WebElement ratesMarketTableOption;
 
     @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/investing/futures\"]")
-    WebElement futuresMarketTableOption;
+    public WebElement futuresMarketTableOption;
 
     @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/investing/cryptocurrency\"]")
-    WebElement cryptoMarketTableOption;
+    public WebElement cryptoMarketTableOption;
 
     @FindBy(xpath = "//td[@class=\"table__cell price\"]//bg-quote[@channel=\"/zigman2/quotes/31322028/realtime\"]")
-    WebElement realTimePriceBTC;
+    public WebElement realTimePriceBTC;
+
+    @FindBy(xpath = "//a[@href=\"https://www.marketwatch.com/investing/cryptocurrency/ethusd?mod=home-page\"]")
+    public WebElement ethTableLink;
 
 
 
@@ -65,6 +68,15 @@ public class HomePage extends BasePage {
         return rTPriceBTC;
 
     }
+
+    public EthSubPage navigateToEthShardPage(){
+        clickOnCryptoOption();
+        webDriverWait.until(ExpectedConditions.visibilityOf(ethTableLink));
+       clickOnElement(ethTableLink);
+
+     return new EthSubPage();
+    }
+
 
 
 

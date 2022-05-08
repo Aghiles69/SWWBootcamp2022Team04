@@ -13,3 +13,9 @@ Test Case 02 :
 *assert(wanted price < actual price) is true ,if it's false print an opportunity-buy-alert-message.
 
 Test Case 03 :
+*navigate to market watch homepage.
+*click on the crypto option.
+*get the actual price or xrp/usd.
+*check if (actual >  monthly DCA(dollar coast average) buying price) true print out an opportunity-buy-alert-message .
+
+
