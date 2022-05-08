@@ -17,6 +17,14 @@ public class LoginPage extends SystemBar {
     @FindBy(id = "passwd")
     public WebElement passwordInputField;
 
+    @FindBy(id = "email_create")
+    public WebElement newEmailAddressInputField;
+
+    @FindBy(id = "SubmitCreate")
+    public WebElement createAccountButton;
+
+
+
 
     public void sKInputRegisteredEmailAddress() {
         webDriverWait.until(ExpectedConditions.visibilityOf(registeredEmailAddressInputField));
@@ -28,5 +36,17 @@ public class LoginPage extends SystemBar {
         sendKeysToElement(passwordInputField, GenerateData.password());
     }
 
+    public CreateAccount createAccount(String emailAddress) {
+        inputNewEmailAddress(emailAddress);
+        return clickCreateAccountButton();
+    }
+    public void inputNewEmailAddress(String emailAddress) {
+        sendKeysToElement(newEmailAddressInputField, emailAddress);
+    }
+
+    public CreateAccount clickCreateAccountButton() {
+        clickOnElement(createAccountButton);
+        return new CreateAccount();
+    }
 
 }
